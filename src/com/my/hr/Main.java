@@ -14,7 +14,7 @@ import com.my.hr.service.LaborerServiceImpl;
 
 public class Main {
 	public static void main(String[] args) {
-		List<String> menuItems = Arrays.asList("¸ñ·Ï", "Ãß°¡", "¼öÁ¤", "»èÁ¦");
+		List<String> menuItems = Arrays.asList("ëª©ë¡", "ì¶”ê°€", "ìˆ˜ì •", "ì‚­ì œ");
 		List<Laborer> laborers = new ArrayList<>();
 		
 		LaborerDao laborerDao = new LaborerDaoImpl(laborers);
@@ -22,6 +22,6 @@ public class Main {
 		LaborerIo laborerIo = new LaborerIo(laborerService, menuItems);
 		
 		laborerIo.play();
-		Console.info("³¡.");
+		Console.info("ë.");
 	}
 }
