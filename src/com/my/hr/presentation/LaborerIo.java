@@ -9,38 +9,36 @@ import com.my.hr.service.LaborerService;
 public class LaborerIo {
 	private LaborerService laborerService;
 	private String menu;
-	private int menuLength;
 	
 	public LaborerIo(LaborerService laborerService, List<String> menuItems) {
 		this.laborerService = laborerService;
-		this.menu = Console.menu(menuItems);
-		this.menuLength = menuItems.size();
+		this.menu = Console.menu(menuItems);		
 	}
 	
 	public void play() {
-		int job = 0;
+		Job job = null;
 		while((job = choose(menu)) != Job.EXIT) {
 			switch(job) {
-			case Job.LIST: listLaborers(); break;
-			case Job.ADD: addLaborer(); break;
-			case Job.FIX: fixLaborer(); break;
-			case Job.DEL: delLaborer();
+			case LIST: listLaborers(); break;
+			case ADD: addLaborer(); break;
+			case FIX: fixLaborer(); break;
+			case DEL: delLaborer();
 			}
 		}
 	}
 	
-	private int choose(String menu) {
+	private Job choose(String menu) {
 		boolean isGood = false;
 		int choice = 0;
 		
 		do {
 			choice = Console.inNum(menu);
-			if(choice < 0 || choice > menuLength)
+			if(choice < 0 || choice > Job.length())
 				Console.err("메뉴 번호를 입력하세요.");
 			else isGood = true;
 		} while(!isGood);
 		
-		return choice;
+		return Job.toJob(choice);
 	}
 	
 	private void listLaborers() {
