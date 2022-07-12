@@ -15,14 +15,13 @@ import com.my.hr.service.LaborerServiceImpl;
 public class Main {
 	public static void main(String[] args) {
 		List<String> menuItems = Arrays.asList("목록", "추가", "수정", "삭제");
-		List<Laborer> laborers = new ArrayList<>();
-		
+		List<Laborer> laborers = new ArrayList<>();		
 		
 		LaborerDao laborerDao = new LaborerDaoImpl(laborers);
 		LaborerService laborerService = new LaborerServiceImpl(laborerDao);
 		LaborerIo laborerIo = new LaborerIo(laborerService, menuItems);
 		
 		laborerIo.play();
-		Console.info("끝.");
+		Console.info("끝..");
 	}
 }
