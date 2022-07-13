@@ -1,7 +1,6 @@
 package com.my.hr;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.my.hr.dao.LaborerDao;
