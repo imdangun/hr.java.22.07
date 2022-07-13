@@ -10,13 +10,13 @@ public class LaborerIo {
 	private LaborerService laborerService;
 	private String menu;
 	
-	public LaborerIo(LaborerService laborerService, List<String> menuItems) {
-		this.laborerService = laborerService;
-		this.menu = Console.menu(menuItems);		
+	public LaborerIo(LaborerService laborerService) {
+		this.laborerService = laborerService;		
+		this.menu = Job.labels();
 	}
 	
 	public void play() {
-		Job job = null;
+		Job job = null;		
 		while((job = choose(menu)) != Job.EXIT) {
 			switch(job) {
 			case LIST: listLaborers(); break;
