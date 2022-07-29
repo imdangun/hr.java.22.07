@@ -46,8 +46,10 @@ public interface Console {
 			line = sc.nextLine().trim();
 			
 			if(line.length() > 0 && line.matches("[0-9]*")) {
-				num = Integer.parseInt(line);
-				isGood = true;
+				try {
+					num = Integer.parseInt(line);
+					isGood = true;
+				} catch(NumberFormatException e) {}
 			}
 			
 			if(!isGood) err("0 이상을 입력하세요.");

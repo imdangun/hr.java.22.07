@@ -33,7 +33,7 @@ public class LaborerIo {
 		
 		do {
 			choice = Console.inNum(menu);
-			if(choice < 0 || choice > Job.length())
+			if(choice < 0 || choice > Job.length() - 1)
 				Console.err("메뉴 번호를 입력하세요.");
 			else isGood = true;
 		} while(!isGood);
